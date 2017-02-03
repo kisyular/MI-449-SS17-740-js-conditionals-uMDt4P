@@ -33,10 +33,20 @@ if (ans) {
           leghand = leghand.trim()
           if (leghand === 'h') {
             if (window.confirm(paraH)) {
-              var bluered = window.prompt('Enter B to pick the Blue key and R to pick the Red key ')
+              var bluered = window.prompt('Enter B to pick the Blue key and G to pick the Green key or R for Computer to Randomly choose a choice for you ')
               if (bluered !== null || bluered !== undefined) {
                 bluered = bluered.toLowerCase()
                 bluered = bluered.trim()
+                if (bluered === 'r') {
+                  var randN = Math.floor((Math.random() * 2) + 1)
+                  if (randN === 2) {
+                    bluered = 'r'
+                    window.alert('Computer Selected Choice ' + bluered.toUpperCase())
+                  } else {
+                    bluered = 'b'
+                    window.alert('Computer Selected Choice ' + bluered.toUpperCase())
+                  }
+                }
                 if (bluered === 'b') {
                   window.alert(paraHB)
                 } else if (bluered === 'r') {
