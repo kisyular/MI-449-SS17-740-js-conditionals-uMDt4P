@@ -28,75 +28,57 @@ if (ans) {
       if (2017 - year > 18) {
         window.alert('You are Over 18. Click OK to continue')
         var leghand = window.prompt('To cut your leg enter(L) and to cut your hand enter (H)')
-        // if (leghand !== null && leghand !== undefined)
-        if (leghand) {
-          leghand = leghand || ''
-          leghand = leghand.trim().toLowerCase()
-          if (leghand === 'h') {
-            if (window.confirm(paraH)) {
-              var bluered = window.prompt('Enter B to pick the Blue key and G to pick the Green key or R for Computer to Randomly choose a choice for you ')
-              // if (bluered !== null && bluered !== undefined)
-              if (bluered) {
-                bluered = bluered || ''
-                bluered = bluered.trim().toLowerCase()
-                if (bluered === 'r') {
-                  var randN = Math.floor((Math.random() * 2) + 1)
-                  if (randN === 2) {
-                    bluered = 'g'
-                    window.alert('Computer Selected Choice ' + bluered.toUpperCase())
-                  } else {
-                    bluered = 'b'
-                    window.alert('Computer Selected Choice ' + bluered.toUpperCase())
-                  }
-                }
-                if (bluered === 'b') {
-                  window.alert(paraHB)
-                } else if (bluered === 'g') {
-                  if (window.confirm(paraHR)) {
-                    var pin = window.prompt('Enter the pin below. PIN HINT: sort the list (8, 0, 6, 7) ')
-                    if (pin !== null && pin !== undefined) {
-                      pin = pin.toLowerCase()
-                      pin = pin.trim()
-                      if (pin === '0678') {
-                        window.alert(paraHRC)
-                      } else {
-                        window.alert(paraHRW)
-                      }
-                    } else {
-                      window.alert(error)
-                    }
-                  } else {
-                    window.alert(cancelled)
-                  }
+        leghand = leghand || ''
+        leghand = leghand.trim().toLowerCase()
+        if (leghand === 'h') {
+          if (window.confirm(paraH)) {
+            var bluered = window.prompt('Enter B to pick the Blue key and G to pick the Green key or R for Computer to Randomly choose a choice for you ')
+            bluered = bluered || ''
+            bluered = bluered.trim().toLowerCase()
+            if (bluered === 'r') {
+              var randN = Math.floor((Math.random() * 2) + 1)
+              if (randN === 2) {
+                bluered = 'g'
+                window.alert('Computer Selected Choice ' + bluered.toUpperCase())
+              } else {
+                bluered = 'b'
+                window.alert('Computer Selected Choice ' + bluered.toUpperCase())
+              }
+            }
+            if (bluered === 'b') {
+              window.alert(paraHB)
+            } else if (bluered === 'g') {
+              if (window.confirm(paraHR)) {
+                var pin = window.prompt('Enter the pin below. PIN HINT: sort the list (8, 0, 6, 7) ')
+                pin = pin || ''
+                pin = pin.trim()
+                if (pin === '0678') {
+                  window.alert(paraHRC)
                 } else {
-                  window.alert(error)
+                  window.alert(paraHRW)
                 }
               } else {
-                window.alert(error)
+                window.alert(cancelled)
               }
             } else {
-              window.alet(cancelled)
+              window.alert(error)
             }
-          } else if (leghand === 'l') {
-            if (window.confirm(paraL)) {
-              var blackwhite = window.prompt('Enter W to open the White door or B to open the Black door ')
-              // if (blackwhite !== null && blackwhite !== undefined)
-              if (blackwhite) {
-                blackwhite = blackwhite || ''
-                blackwhite = blackwhite.trim().toLowerCase()
-                if (blackwhite === 'b') {
-                  window.alert(paraLB)
-                } else if (blackwhite === 'w') {
-                  window.alert('You chose the wrong door (: Game Over')
-                } else {
-                  window.alert(error)
-                }
-              } else {
-                window.alert(error)
-              }
-            }
+
           } else {
-            window.alert(error)
+            window.alet(cancelled)
+          }
+        } else if (leghand === 'l') {
+          if (window.confirm(paraL)) {
+            var blackwhite = window.prompt('Enter W to open the White door or B to open the Black door ')
+            blackwhite = blackwhite || ''
+            blackwhite = blackwhite.trim().toLowerCase()
+            if (blackwhite === 'b') {
+              window.alert(paraLB)
+            } else if (blackwhite === 'w') {
+              window.alert('You chose the wrong door (: Game Over')
+            } else {
+              window.alert(error)
+            }
           }
         } else {
           window.alert(error)
